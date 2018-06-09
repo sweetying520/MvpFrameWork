@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+
+    <!--字体的颜色-->
+    <color name="text_color_light">#999999</color>
+    <color name="text_color_dark">#333333</color>
+    <color name="text_color">#666666</color>
+
+    <!--加载失败按钮及字体颜色 亮色和暗色-->
+    <color name="tab_bac">#049486</color>
+    <color name="light_tab_bac">#45c1b5</color>
+</resources>

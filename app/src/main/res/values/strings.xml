@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">MvpFrameWork</string>
+
+    <!--网络错误-->
+    <string name="error_tips">不妙！加载失败了ヽ(≧Д≦)ノ\n 告诉大佬一些可能的原因：\n1.不可直视的网络环境\n 2.服务器大哥的不定期抽风\n 3.WanAndroid眼冒金星拒绝服务喔~</string>
+    <string name="reload">重新加载</string>
+
+    <!--再按一次后退键退出-->
+    <string name="double_click_exit_tint">再按一次后退键退出</string>
+
+    //通用
+    <string name="http_error">网络异常</string>
+    <string name="unKnown_error">未知错误</string>
+</resources>

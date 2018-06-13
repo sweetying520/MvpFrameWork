@@ -4,7 +4,6 @@ import com.dream.mvpframework.BuildConfig;
 import com.dream.mvpframework.common.MyConstants;
 import com.dream.mvpframework.di.qualifier.MyAppUrl;
 import com.dream.mvpframework.model.http.api.Api;
-import com.dream.mvpframework.model.http.cookies.CookiesManager;
 import com.dream.mvpframework.util.CommonUtils;
 
 import java.io.File;
@@ -43,7 +42,7 @@ public class HttpModule {
     @Provides
     @MyAppUrl
     Retrofit provideGeeksRetrofit(Retrofit.Builder builder, OkHttpClient client) {
-        return createRetrofit(builder, client, Api.BASA_URL);
+        return createRetrofit(builder, client, Api.BASR_URL);
     }
 
     @Singleton
@@ -63,7 +62,7 @@ public class HttpModule {
     OkHttpClient provideClient(OkHttpClient.Builder builder) {
         if (BuildConfig.DEBUG) {
             HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
-            loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BASIC);
+            loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
             builder.addInterceptor(loggingInterceptor);
         }
 
@@ -105,7 +104,7 @@ public class HttpModule {
         //错误重连
         builder.retryOnConnectionFailure(true);
         //cookie认证
-        builder.cookieJar(new CookiesManager());
+        //builder.cookieJar(new CookiesManager());
         return builder.build();
     }
 

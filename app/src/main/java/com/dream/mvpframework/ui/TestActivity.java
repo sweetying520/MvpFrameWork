@@ -3,6 +3,7 @@ package com.dream.mvpframework.ui;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.dream.mvpframework.R;
 import com.dream.mvpframework.base.activity.BaseActivity;
@@ -25,13 +26,20 @@ public class TestActivity extends BaseActivity<TestPresenter> implements TestCon
     }
 
     @Override
+    public void showSuccess() {
+        Toast.makeText(mContext, "获取数据成功", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
     protected int getLayoutId() {
         return R.layout.activity_test;
     }
 
     @Override
     protected void initEventAndData() {
+        mContext = this;
         mPresenter.testView();
+        mPresenter.testGetData();
     }
 
     @Override

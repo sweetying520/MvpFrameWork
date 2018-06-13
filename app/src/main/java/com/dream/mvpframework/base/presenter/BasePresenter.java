@@ -19,7 +19,7 @@ public class BasePresenter<T extends BaseView> implements AbstractPresenter<T> {
 
     protected T mView;
     private CompositeDisposable compositeDisposable;
-    private DataManager mDataManager;
+    protected DataManager mDataManager;
 
     public BasePresenter(DataManager dataManager) {
         mDataManager = dataManager;

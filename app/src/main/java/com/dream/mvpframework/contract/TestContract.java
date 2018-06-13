@@ -11,9 +11,13 @@ public interface TestContract {
 
     interface View extends BaseView{
         void testPresenter();
+
+        void showSuccess();
     }
 
     interface Presneter extends AbstractPresenter<View>{
         void testView();
+
+        void testGetData();
     }
 }

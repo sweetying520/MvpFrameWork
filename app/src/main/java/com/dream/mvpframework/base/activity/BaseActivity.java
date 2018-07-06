@@ -55,17 +55,17 @@ public abstract class BaseActivity<T extends AbstractPresenter> extends Abstract
 
     @Override
     public void showNormal() {
-
+        showNormalView();
     }
 
     @Override
     public void showError() {
-
+        showErrorView();
     }
 
     @Override
     public void showLoading() {
-
+        showLoadingView();
     }
 
     @Override

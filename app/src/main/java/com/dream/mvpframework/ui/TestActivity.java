@@ -11,7 +11,7 @@ import com.dream.mvpframework.contract.TestContract;
 import com.dream.mvpframework.presenter.TestPresenter;
 
 /**
- *
+ *继承BaseActivity 适用于MVP模式
  * @author Administrator
  * @date 2018/6/9
  */
@@ -35,12 +35,31 @@ public class TestActivity extends BaseActivity<TestPresenter> implements TestCon
         return R.layout.activity_test;
     }
 
+
     @Override
     protected void initEventAndData() {
         mContext = this;
+        setToolbarCenterTitle("TestActivity");
         mPresenter.testView();
         mPresenter.testGetData();
+
+        showLoading();
+
+
+        new Thread(){
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(3000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                runOnUiThread(() -> showNormal());
+            }
+        }.start();
     }
+
 
     @Override
     protected void initInject() {
@@ -50,4 +69,5 @@ public class TestActivity extends BaseActivity<TestPresenter> implements TestCon
     public static void start(Context mContext){
         mContext.startActivity(new Intent(mContext,TestActivity.class));
     }
+
 }

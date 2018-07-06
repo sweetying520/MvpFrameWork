@@ -2,9 +2,11 @@ package com.dream.mvpframework.util;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
+import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
@@ -173,6 +175,19 @@ public class CommonUtils {
     public static float getDimens(int resId) {
         return getResoure().getDimension(resId);
     }
+
+    public static void toActivity(Context mContext,Class mClass){
+        Intent intent = new Intent(mContext,mClass);
+        mContext.startActivity(intent);
+    }
+
+    public static void toActivity(Context mContext, Class mClass, Bundle mBundle){
+        Intent intent = new Intent(mContext,mClass);
+        intent.putExtras(mBundle);
+        mContext.startActivity(intent);
+    }
+
+
 
 
 }

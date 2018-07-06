@@ -48,16 +48,16 @@ public class TestPresenter extends BasePresenter<TestContract.View> implements T
                     }
                 }));
 
-        addSubscribe(mDataManager.getBanner()
-        .compose(RxUtils.rxSchedulerHelper())
-        .compose(RxUtils.handleResult())
-        .subscribeWith(new BaseObserver<List<BannerData>>(mView){
-
-            @Override
-            public void onNext(List<BannerData> bannerData) {
-
-            }
-        }));
+//        addSubscribe(mDataManager.getBanner()
+//        .compose(RxUtils.rxSchedulerHelper())
+//        .compose(RxUtils.handleResult())
+//        .subscribeWith(new BaseObserver<List<BannerData>>(mView){
+//
+//            @Override
+//            public void onNext(List<BannerData> bannerData) {
+//
+//            }
+//        }));
     }
 
 
